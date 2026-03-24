@@ -1,25 +1,39 @@
+#cat > .gitignore << 'EOF'
 # Terraform
-.terraform/
+**/.terraform/
 *.tfstate
 *.tfstate.*
-crash.log
-crash.*.log
+*.tfvars
+*.tfvars.json
 override.tf
 override.tf.json
-*_override.tf
-*_override.tf.json
-terraform.tfvars
-terraform.tfvars.json
+*.terraformrc
+.terraform.hcl
 
-# Local tooling and environments
+# LocalStack
+.localstack/
+localstack/
+*.log
+
+# Environment files
+.env
+.env.local
+.venv
 venv/
-.venv/
-__pycache__/
 
-# Editor and OS files
+# OS files
 .DS_Store
-.idea/
-.vscode/
+Thumbs.db
 
-# Local notes
-notes/
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Outputs
+*.png
+*.dot
+graph.dot
+EOF
+
